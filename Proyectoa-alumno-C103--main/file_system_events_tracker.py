@@ -11,7 +11,6 @@ from watchdog.events import FileSystemEventHandler
 
 from_dir = "C:/Users/Byjus/Downloads"
 
-# Clase event handler
 class FileEventHandler(FileSystemEventHandler):
 
     def on_created(self, event):
@@ -28,17 +27,13 @@ class FileEventHandler(FileSystemEventHandler):
         
 
 
-# Inicia la clase event handler
 event_handler = FileEventHandler()
 
-# Inicia Observer
 observer = Observer()
 
-# Programa Observer
 observer.schedule(event_handler, from_dir, recursive=True)
 
 
-# Inicia Observer
 observer.start()
 
 try:
